@@ -15,12 +15,12 @@
                                     <p
                                         @class([
                                             'px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800',
-                                            'bg-yellow-100 text-yellow-800' => $batch->cancelled,
+                                            'bg-yellow-100 text-yellow-800' => $batch->cancelled_at,
                                             'bg-gray-100 text-gray-800' => $batch->pending_jobs > 0,
                                             'bg-red-100 text-red-800' => $batch->pending_jobs == 0 && $batch->failed_jobs > 0,
                                          ])
                                     >
-                                        @if ($batch->cancelled)
+                                        @if ($batch->cancelled_at)
                                             Cancelled
                                         @elseif ($batch->pending_jobs > 0)
                                             Processing ({{ round((1 - $batch->pending_jobs / $batch->total_jobs) * 100, 2) }}%)

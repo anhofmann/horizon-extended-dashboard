@@ -14,7 +14,7 @@ class RetrieveBatchData
         'total_jobs',
         'pending_jobs',
         'failed_jobs',
-        'cancelled',
+//        'cancelled',
         'cancelled_at',
         'created_at',
         'finished_at',
