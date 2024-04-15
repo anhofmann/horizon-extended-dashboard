@@ -32,7 +32,7 @@ class QueueJobCountsChart extends Component
             ->each(function(QueueStatistic $statistic) use ($chartModel) {
 
                 $chartModel->addSeriesPoint('Pushed', $statistic->snapshot_at->toDateTimeString(), $statistic->job_pushed_count);
-                $chartModel->addSeriesPoint('Failed', $statistic->snapshot_at->toDateTimeString(), $statistic->job_failed_count);
+                $chartModel->addSeriesPoint('Failed', $statistic->snapshot_at->toDateTimeString(), $statistic->job_fail_count);
                 $chartModel->addSeriesPoint('Completed', $statistic->snapshot_at->toDateTimeString(), $statistic->job_completed_count);
 
             });

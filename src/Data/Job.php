@@ -56,9 +56,9 @@ class Job implements Arrayable
 
         if ($command->delay === null) {
             return false;
-        }
+	}
 
-        return now()->lessThan($command->delay);
+	return $command->delay > 0;
     }
 
     public function getDelayedUntil(): string
@@ -67,9 +67,9 @@ class Job implements Arrayable
 
         if ($command->delay === null) {
             return false;
-        }
+	}
 
-        return $command->delay->toDateTimeString();
+	return now()->addSeconds(round($command->delay))->toDateTimeString();
     }
 
     public static function fromStdClass(\stdClass $class): static

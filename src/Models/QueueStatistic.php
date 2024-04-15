@@ -12,7 +12,7 @@ use VincentBean\HorizonDashboard\Database\Factories\QueueStatisticFactory;
  * @property string $queue
  * @property int $job_pushed_count
  * @property int $job_completed_count
- * @property int $job_failed_count
+ * @property int $job_fail_count
  * @property int $jobs_per_minute
  * @property int $throughput
  * @property int $wait
