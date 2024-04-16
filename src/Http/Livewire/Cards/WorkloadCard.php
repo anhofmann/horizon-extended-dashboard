@@ -18,7 +18,7 @@ class WorkloadCard extends Component
                 $workload['wait'] = $timeHelper->secondsToTime($workload['wait']);
 
                 return $workload;
-            });
+            })->sortBy('name');
 
         return view('horizondashboard::livewire.cards.workload-card', ['queues' => $queues]);
     }
