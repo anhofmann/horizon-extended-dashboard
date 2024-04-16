@@ -2,7 +2,7 @@
     @if (! count($batches))
         No Batches
     @endif
-    
+
     <div class="bg-white shadow overflow-hidden sm:rounded-md">
         <ul role="list" class="divide-y divide-gray-200">
             @foreach ($batches as $batch)
