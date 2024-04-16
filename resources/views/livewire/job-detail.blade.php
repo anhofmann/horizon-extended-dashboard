@@ -92,9 +92,9 @@
                                         <dt class="text-sm font-medium text-gray-500">{{ $detail['name'] }}</dt>
                                         <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                                             @if(is_array($detail['value']))
-                                                <pre>{{ json_encode($detail['value'], JSON_PRETTY_PRINT) }}</pre>
+                                                <pre class="text-xs">{{ json_encode($detail['value'], JSON_PRETTY_PRINT) }}</pre>
                                             @else
-                                                {{ $detail['value'] }}
+                                                <pre class="text-xs">{{ json_encode(json_decode($detail['value']), JSON_PRETTY_PRINT) }}</pre>
                                             @endif
                                         </dd>
                                     </div>
